@@ -1,15 +1,19 @@
-- se for o primeiro alarme eu desligo
-- se for o segundo eu desligo
-- abro os olhos e levanto
-- vou ao banheiro e entro no box
-- vejo onde onde está a temperatura do chuveiro
-- se o dia estiver quente coloco o a temperatura na fria 
-- se não coloco no quente
-- escovo os dentes
-- quando tocar o terceiro alarme eu desligo o chuveiro
-- saio do box
-- procuro uma roupa que esteja de acordo com a temperatura do dia
-- visto a roupa 
-- aguardo a hora do café
+INÍCIO
+
+1 - se for o primeiro alarme eu desligo
+2 - se for o segundo eu desligo
+3 - abro os olhos e levanto
+4 - vou ao banheiro e entro no box
+5 - vejo onde onde está a temperatura do chuveiro
+6 - se o dia estiver quente coloco o a temperatura na fria 
+7 - se não coloco no quente
+8 - escovo os dentes
+9 - quando tocar o terceiro alarme eu desligo o chuveiro
+10 - saio do box
+11 - procuro uma roupa que esteja de acordo com a temperatura do dia
+12 - visto a roupa 
+13 - aguardo a hora do café
+
+FIM
 
 obs:3 alarme é um bip de 10 segundos e para sozinho.
