@@ -1,0 +1,15 @@
+- se for o primeiro alarme eu desligo
+- se for o segundo eu desligo
+- abro os olhos e levanto
+- vou ao banheiro e entro no box
+- vejo onde onde está a temperatura do chuveiro
+- se o dia estiver quente coloco o a temperatura na fria 
+- se não coloco no quente
+- escovo os dentes
+- quando tocar o terceiro alarme eu desligo o chuveiro
+- saio do box
+- procuro uma roupa que esteja de acordo com a temperatura do dia
+- visto a roupa 
+- aguardo a hora do café
+
+obs:3 alarme é um bip de 10 segundos e para sozinho.
