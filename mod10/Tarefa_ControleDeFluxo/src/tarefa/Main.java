@@ -15,5 +15,6 @@ public class Main {
         double nota4 = scanner.nextDouble();
         ResultadoDoAno resultadoDoAno = new ResultadoDoAno(nota1,nota2,nota3,nota4);
         resultadoDoAno.calculaExibeResultado();
+
     }
 }
