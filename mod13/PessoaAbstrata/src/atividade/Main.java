@@ -7,7 +7,7 @@ public class Main {
         System.out.println("");
         System.out.println("------------------------------------------");
         System.out.println("");
-        PessoaJuridica pessoaJuridica = new PessoaJuridica("Mondelez","SP",500.000,1312312L);
+        PessoaJuridica pessoaJuridica = new PessoaJuridica("Mondelez","SP",500.000,112312L);
         pessoaJuridica.calculaImpostoSobreValorGanho(pessoaJuridica.getValorGanho());
     }
 }
