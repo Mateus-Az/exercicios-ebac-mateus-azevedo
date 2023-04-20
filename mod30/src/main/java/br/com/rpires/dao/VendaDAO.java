@@ -92,8 +92,8 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 	protected String getQueryInsercao() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO TB_VENDA ");
-		sb.append("(ID, CODIGO, ID_CLIENTE_FK, VALOR_TOTAL, DATA_VENDA, STATUS_VENDA)");
-		sb.append("VALUES (nextval('sq_venda'),?,?,?,?,?)");
+		sb.append("(ID, CODIGO, ID_CLIENTE_FK, VALOR_TOTAL, DATA_VENDA, STATUS_VENDA, PESO_TOTAL_KG)");
+		sb.append("VALUES (nextval('sq_venda'),?,?,?,?,?,?)");
 		return sb.toString();
 	}
 
@@ -104,6 +104,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 		stmInsert.setBigDecimal(3, entity.getValorTotal());
 		stmInsert.setTimestamp(4, Timestamp.from(entity.getDataVenda()));
 		stmInsert.setString(5, entity.getStatus().name());
+		stmInsert.setBigDecimal(6,entity.getPesoTotal());
 	}
 
 	@Override
@@ -221,7 +222,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 
 	private StringBuilder sqlBaseSelect() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT V.ID AS ID_VENDA, V.CODIGO, V.VALOR_TOTAL, V.DATA_VENDA, V.STATUS_VENDA, ");
+		sb.append("SELECT V.ID AS ID_VENDA, V.CODIGO, V.VALOR_TOTAL, V.DATA_VENDA, V.STATUS_VENDA, V.PESO_TOTAL_KG,");
 		sb.append("C.ID AS ID_CLIENTE, C.NOME, C.CPF, C.TEL, C.ENDERECO, C.NUMERO, C.CIDADE, C.ESTADO ");
 		sb.append("FROM TB_VENDA V ");
 		sb.append("INNER JOIN TB_CLIENTE C ON V.ID_CLIENTE_FK = C.ID ");
@@ -266,8 +267,8 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 	private String getQueryInsercaoProdQuant() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO TB_PRODUTO_QUANTIDADE ");
-		sb.append("(ID, ID_PRODUTO_FK, ID_VENDA_FK, QUANTIDADE, VALOR_TOTAL)");
-		sb.append("VALUES (nextval('sq_produto_quantidade'),?,?,?,?)");
+		sb.append("(ID, ID_PRODUTO_FK, ID_VENDA_FK, QUANTIDADE, VALOR_TOTAL,PESO_TOTAL_KG)");
+		sb.append("VALUES (nextval('sq_produto_quantidade'),?,?,?,?,?)");
 		return sb.toString();
 	}
 	
@@ -276,6 +277,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 		stm.setLong(2, venda.getId());
 		stm.setInt(3, prod.getQuantidade());
 		stm.setBigDecimal(4, prod.getValorTotal());
+		stm.setBigDecimal(5,prod.getPesoTotal());
 	}
 
 }

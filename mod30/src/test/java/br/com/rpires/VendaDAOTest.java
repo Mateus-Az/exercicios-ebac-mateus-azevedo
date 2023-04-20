@@ -3,10 +3,20 @@
  */
 package br.com.rpires;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import br.com.rpires.dao.*;
+import br.com.rpires.dao.generic.jdbc.ConnectionFactory;
+import br.com.rpires.domain.Cliente;
+import br.com.rpires.domain.Produto;
+import br.com.rpires.domain.ProdutoQuantidade;
+import br.com.rpires.domain.Venda;
+import br.com.rpires.domain.Venda.Status;
+import br.com.rpires.exceptions.DAOException;
+import br.com.rpires.exceptions.MaisDeUmRegistroException;
+import br.com.rpires.exceptions.TableException;
+import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -18,26 +28,7 @@ import java.time.Instant;
 import java.util.Collection;
 import java.util.Optional;
 
-import br.com.rpires.domain.ProdutoQuantidade;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import br.com.rpires.dao.ClienteDAO;
-import br.com.rpires.dao.IClienteDAO;
-import br.com.rpires.dao.IProdutoDAO;
-import br.com.rpires.dao.IVendaDAO;
-import br.com.rpires.dao.ProdutoDAO;
-import br.com.rpires.dao.VendaDAO;
-import br.com.rpires.dao.generic.jdbc.ConnectionFactory;
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.domain.Produto;
-import br.com.rpires.domain.Venda;
-import br.com.rpires.domain.Venda.Status;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import static org.junit.Assert.*;
 
 /**
  * @author rodrigo.pires
@@ -139,6 +130,7 @@ public class VendaDAOTest {
 		if (pq.isPresent()) {
 			assertEquals(BigDecimal.valueOf(6), pq.get().getPesoTotal());
 		}
+		assertEquals(BigDecimal.valueOf(6),vendaConsultada.getPesoTotal());
 
 		assertTrue(vendaConsultada.getQuantidadeTotalProdutos() == 3);
 		BigDecimal valorTotal = BigDecimal.valueOf(30).setScale(2, RoundingMode.HALF_DOWN);
@@ -296,6 +288,7 @@ public class VendaDAOTest {
 		assertEquals(Status.CONCLUIDA, vendaConsultada.getStatus());
 
 		vendaConsultada.adicionarProduto(this.produto, 1);
+		assertEquals(BigDecimal.valueOf(8),vendaConsultada.getPesoTotal());
 
 	}
 

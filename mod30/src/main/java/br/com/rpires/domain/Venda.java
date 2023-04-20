@@ -55,7 +55,18 @@ public class Venda implements Persistente {
 	
 	@ColunaTabela(dbName = "status_venda", setJavaName = "setStatus")
 	private Status status;
-	
+
+	@ColunaTabela(dbName =  "peso_total",setJavaName = "setPesoTotal")
+	private BigDecimal pesoTotal = BigDecimal.ZERO;
+
+	public BigDecimal getPesoTotal() {
+		return pesoTotal;
+	}
+
+	public void setPesoTotal(BigDecimal pesoTotal) {
+		this.pesoTotal = pesoTotal;
+	}
+
 	public Venda() {
 		produtos = new HashSet<>();
 	}
@@ -96,6 +107,7 @@ public class Venda implements Persistente {
 			produtos.add(prod);
 		}
 		recalcularValorTotalVenda();
+		recalcularPesoLote();
 	}
 
 	private void validarStatus() {
@@ -116,6 +128,7 @@ public class Venda implements Persistente {
 			} else {
 				produtos.remove(op.get());
 				recalcularValorTotalVenda();
+				recalcularPesoLote();
 			}
 			
 		}
@@ -141,6 +154,12 @@ public class Venda implements Persistente {
 			valorTotal = valorTotal.add(prod.getValorTotal());
 		}
 		this.valorTotal = valorTotal;
+	}
+	public void recalcularPesoLote(){
+		BigDecimal aux = BigDecimal.ZERO;
+		getProdutos().forEach(produtoQuantidade -> {
+			this.pesoTotal = this.pesoTotal.add(produtoQuantidade.getPesoTotal());
+		});
 	}
 
 	public BigDecimal getValorTotal() {
