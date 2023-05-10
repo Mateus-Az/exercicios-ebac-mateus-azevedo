@@ -11,7 +11,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import br.com.rpires.dao.Persistente;
 import br.com.rpires.exceptions.DAOException;
 import br.com.rpires.exceptions.MaisDeUmRegistroException;
 import br.com.rpires.exceptions.TableException;
@@ -77,7 +76,7 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
 	
 	protected void openConnection() {
 		entityManagerFactory = 
-				Persistence.createEntityManagerFactory("ExemploJPA");
+				Persistence.createEntityManagerFactory("Mod35");
 		entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
 	}

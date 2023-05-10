@@ -3,6 +3,8 @@
  */
 package br.com.rpires.domain.jpa;
 
+import br.com.rpires.dao.generic.jpa.Persistente;
+
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -12,8 +14,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import br.com.rpires.dao.Persistente;
 
 
 @Entity
