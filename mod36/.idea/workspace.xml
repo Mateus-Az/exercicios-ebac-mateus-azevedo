@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="313a112b-56f5-48aa-8278-e64648acb283" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/rpires/dao/generic/jpa/Persistente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rpires/dao/generic/jpa/GenericJpaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rpires/dao/generic/jpa/GenericJpaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rpires/dao/generic/jpa/IGenericJapDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rpires/dao/generic/jpa/IGenericJapDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rpires/domain/jpa/ClienteJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rpires/domain/jpa/ClienteJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rpires/domain/jpa/ProdutoJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rpires/domain/jpa/ProdutoJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rpires/domain/jpa/VendaJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rpires/domain/jpa/VendaJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rpires/services/generic/jpa/GenericJpaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rpires/services/generic/jpa/IGenericJpaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/rpires/dao/ClienteDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/rpires/dao/ClienteDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,23 +35,29 @@
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "/home/mateo/Programs/Drivers-jdbc/postgreSQL/postgresql-42.6.0.jar",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.17786886",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.rpires.dao.jpa" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="ClienteJpaDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Cliente1DaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.rpires.jpa.*" />
+          <option name="PATTERN" value="br.com.rpires.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.com.rpires.jpa" />
-      <option name="MAIN_CLASS_NAME" value="br.com.rpires.jpa.ClienteJpaDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="br.com.rpires.jpa.Cliente1DaoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -70,7 +65,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteJpaDaoTest" />
+        <item itemvalue="JUnit.Cliente1DaoTest" />
       </list>
     </recent_temporary>
   </component>

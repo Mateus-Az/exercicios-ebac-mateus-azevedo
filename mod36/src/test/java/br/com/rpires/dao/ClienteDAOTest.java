@@ -39,7 +39,7 @@ public class ClienteDAOTest {
 
 
 
-    @After
+   @After
     public void end() throws DAOException {
         Collection<Cliente1> list1 = clienteDAO1.buscarTodos();
         excluir1(list1);
@@ -170,15 +170,6 @@ public class ClienteDAOTest {
 
         Collection<Cliente1> list1 = clienteDAO1.buscarTodos();
         assertTrue(list1 != null);
-
-        list1.forEach(cli -> {
-            try {
-                clienteDAO1.excluir(cli);
-            } catch (DAOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        });
 
         Collection<Cliente2> list2 = clienteDAO2.buscarTodos();
         assertTrue(list2 != null);

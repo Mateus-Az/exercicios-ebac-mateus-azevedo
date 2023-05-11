@@ -24,11 +24,13 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
 	protected EntityManager entityManager;
 	
 	private Class<T> persistenteClass;
+	private String nomeDoBanco;
 	
-	public GenericJpaDAO(Class<T> persistenteClass) {
+	public GenericJpaDAO(Class<T> persistenteClass, String banco) {
+		this.nomeDoBanco = banco;
 		this.persistenteClass = persistenteClass;
 	}
-	
+
 	@Override
 	public T cadastrar(T entity) throws TipoChaveNaoEncontradaException, DAOException {
 		openConnection();
@@ -75,10 +77,13 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
 	}
 	
 	protected void openConnection() {
-		entityManagerFactory = 
-				Persistence.createEntityManagerFactory("Mod35");
-		entityManager = entityManagerFactory.createEntityManager();
-		entityManager.getTransaction().begin();
+		if (nomeDoBanco == null || nomeDoBanco.isEmpty()) {
+			this.nomeDoBanco = "Banco1";
+		}else {
+			entityManagerFactory = Persistence.createEntityManagerFactory(nomeDoBanco);
+			entityManager = entityManagerFactory.createEntityManager();
+			entityManager.getTransaction().begin();
+		}
 	}
 	
 	protected void closeConnection() {
